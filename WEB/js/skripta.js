@@ -3,7 +3,7 @@
 ///////////////
 
 function ucitaj(){
-	$.getJSON(putanjaAPI + "/mjerenja", function( jsonData ) {
+	$.getJSON(putanjaAPI + "/read", function( jsonData ) {
 		postaviNaTablicu(jsonData);
 	});
 }
@@ -32,12 +32,14 @@ $("#spremi").click(function(){
     var json = {};
     jQuery.each($("#forma").serializeArray(), function() {
         json[this.name] = this.value || '';
-    });
+	});
+	//console.log(json);
 	if(json["sifra"]=="0"){
 		delete json.sifra;
-		ajax(putanjaAPI + "/novoMjerenje",json);
-	}else{
-		ajax(putanjaAPI + "/updateMjerenje",json);
+		ajax(putanjaAPI + "/update",json);
+	}
+	else{
+		ajax(putanjaAPI + "/create",json);
 	}
 	return false;
 });
@@ -70,8 +72,8 @@ function definirajDogadajeNakonAJAXa(){
 	$(".brisanje").click(function(){
 	    var json = {};
 	    json["sifra"]=$(this).attr("id").split("_")[1];
-		if(confirm("Sigurno obrisati?")){
-			ajax(putanjaAPI + "/obrisiMjerenje",json);
+		if(confirm("sigurno obrisati?")){
+			ajax(putanjaAPI + "/delete",json);
 		}
 		return false;
 	});
@@ -82,7 +84,7 @@ function definirajDogadajeNakonAJAXa(){
 	
 	$(".promjena").click(function(){
 		var sifra=$(this).attr("id").split("_")[1];
-		$.getJSON(putanjaAPI + "/mjerenja/" + sifra, function( jsonData ) {
+		$.getJSON(putanjaAPI + "/read/" + sifra, function( jsonData ) {
 			jQuery.each(Object.entries(jsonData), function() {
 				$("#" + this[0]).val(this[1]);
 			});
@@ -120,10 +122,13 @@ function postaviNaTablicu(jsonData){
 	  $.each( jsonData, function( kljuc, operater ) {
 	    $("#podaci").append("<tr>" + 
 	    "<td>" + operater.sifra + "</td>" +
-	    "<td>" + operater.lokacija + "</td>" +
-	    "<td>" + operater.datum + "</td>" +
-	    "<td>" + operater.temperatura + "</td>" +
-	    "<td>" + operater.osoba + "</td>" +
+	    "<td>" + operater.ime + "</td>" +
+	    "<td>" + operater.prezime + "</td>" +
+	    "<td>" + operater.email + "</td>" +
+		"<td>" + operater.fakultet + "</td>" +
+		"<td>" + operater.naslov + "</td>" +
+		"<td>" + operater.sazetak + "</td>" +
+		"<td>" + operater.kljucnerijeci + "</td>" +
 	    "<td><a href=\"#\" class=\"promjena\" id=\"o_" + operater.sifra + "\">Promjena</a> | " +
 	    "<a href=\"#\" class=\"brisanje\" id=\"o_" + operater.sifra + "\">Brisanje</a>"
 	     + "</td>" +

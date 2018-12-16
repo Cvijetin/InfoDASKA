@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Registracija</title>
+    <meta name="description" content="InfoDaska2019">
+  <meta name="author" content="InfoDaska2019">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+            @import url('https://fonts.googleapis.com/css?family=Raleway');
+          </style>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <header>
+        <div class="back">
+            <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="title" id="modal">
+            <h1>Prijava</h1>
+        </div>
+    </header>
+    <form id="forma">
+        <div class="forma-wrapper row">
+            <div class="forma-autor col-lg-6 col-sm-12">
+                <div class="form-input">
+                    <label for="ime">Ime</label>
+                    <input type="text" class="form-control-text" id="ime" name="ime" placeholder="Unesite ime">
+                </div>
+                <div class="form-input">
+                    <label for="prezime">Prezime</label>
+                    <input type="text" class="form-control-text" id="prezime" name="prezime" placeholder="Unesite prezime">
+                </div>
+                <div class="form-input">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control-text" id="email" name="email" placeholder="Unesite email">
+                </div>
+                <button id="dodajAutora">
+                    +
+                </button>
+            </div>
+            <div class="forma-rad col-lg-6 col-sm-12">
+
+                <div class="form-input">
+                    <label for="fakultet">Fakultet</label>
+                    <input type="text" class="form-control-text" id="fakultet" name="fakultet" placeholder="Unesite fakultet">
+                </div>
+                <div class="form-input">
+                    <label for="naslov">Naslov</label>
+                    <input type="text" class="form-control-text" id="naslov" name="naslov" placeholder="Unesite naslov">
+                </div>
+                <div class="form-input">
+                    <label for="kljucnerijeci">Ključne riječi</label>
+                    <input type="text" class="form-control-text" id="kljucnerijeci" name="kljucnerijeci" placeholder="Unesite ključne riječi">
+                </div>
+
+            </div>
+        </div>
+        <div class="abstract row">
+            <div class="form-input textarea col-lg-12">
+                <label for="sazetak">Sažetak</label>
+                <textarea type="text" class="form-control-textarea" id="sazetak" name="sazetak" placeholder="Unesite sazetak"></textarea>
+            </div>
+
+        </div>
+        <div class="submit-button">
+            <input type="submit" class="button btn-prijava" value="Spremi" id="spremi">
+        </div>
+    </form>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+    <script>
+        //lokalno
+        var putanjaAPI = "../API";
+  //server
+  //var putanjaAPI="/P11617/tjakopec/P3/Programiranje3API";
+    </script>
+    <script src="js/skripta.js"></script>
+</body>
+
+</html>

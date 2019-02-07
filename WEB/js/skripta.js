@@ -1,3 +1,83 @@
+
+ var autori=Array();
+
+ $("#dodaj").click(function(){
+
+//trim i sve ostale kontrole
+if($("#ime").val()==="")
+{
+alertify.error("Niste unijeli ime");
+   return false;
+}
+if($("#prezime").val()==="")
+{
+alertify.error("Niste unijeli prezime");
+   return false;
+}
+if($("#email").val()==="")
+{
+alertify.error("Niste unijeli e-mail");
+   return false;
+}
+if($("#fakultet").val()==="")
+{
+alertify.error("Niste unijeli fakultet");
+   return false;
+}
+
+
+
+   autori.push({
+	   "ime":$("#ime").val(),
+	   "prezime":$("#prezime").val(),
+	   "email":$("#email").val(),
+	   "fakultet":$("#fakultet").val()
+   //dodti ostale
+   });
+
+   prikaziAutore();
+   alertify.success("Autor uspješno dodan");
+   return false;
+ });
+
+ function prikaziAutore(){
+	 $("#autori").html("<h2>Prijavljeni autori:</h2>");
+	for(var i=0;i<autori.length;i++){
+	   $("#autori").append("<p>"
+	   + autori[i].ime + " " + " | " 
+	   + autori[i].prezime + " " + " | " 
+	   + autori[i].email + " " + " | " 
+	   + autori[i].fakultet + " "  
+	   + " <a class=\"brisanje btn-danger btn-sm\" href=\"#\" id=\"id_" + i + "\">Obriši</a></p>");
+	}
+	$(".brisanje").unbind("click");
+	definirajBrisanje();
+	isprazni();
+	
+ }
+
+ function definirajBrisanje(){
+	 $(".brisanje").click(function(){
+	   var id = $(this).attr("id").split("_")[1];
+	   //console.log(id);
+	  // console.log(autori);
+	   autori.splice(id,1);
+	  // console.log(autori);
+	   prikaziAutore();
+	   alertify.success("Autor uspješno obrisan");
+	   return false;
+	 });
+ }
+
+ //originalno autorsko djelo
+ function isprazni(){
+	$("#ime, #prezime, #email, #fakultet").val("")
+	return false;
+ }
+
+
+
+
 ///////////////
 /// READ
 ///////////////
@@ -29,18 +109,21 @@ $("#noviOperater").click(function(){
 ///////////////
 
 $("#spremi").click(function(){
-    var json = {};
+
+	var json = {};
+	
     jQuery.each($("#forma").serializeArray(), function() {
         json[this.name] = this.value || '';
 	});
-	//console.log(json);
-	if(json["sifra"]=="0"){
-		delete json.sifra;
-		ajax(putanjaAPI + "/update",json);
+	json["autori"]=autori;
+	console.log(json);
+	if (ajax(putanjaAPI + "/rad/create",json)) {
+		alertify.success("Uspješno prijavljen rad");
 	}
 	else{
-		ajax(putanjaAPI + "/create",json);
+		alertify.error("Rad nije uspješno prijavljen");
 	}
+		
 	return false;
 });
 

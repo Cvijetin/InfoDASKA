@@ -109,7 +109,21 @@ $("#noviOperater").click(function(){
 ///////////////
 
 $("#spremi").click(function(){
-
+	if($("#naslov").val()==="")
+	{
+	alertify.error("Niste unijeli naslov rada");
+		 return false;
+	}
+	if($("#kljucnerijeci").val()==="")
+{
+alertify.error("Niste unijeli ključne riječi");
+   return false;
+}
+if($("#sazetak").val()==="")
+{
+alertify.error("Niste unijeli sažetak");
+   return false;
+}
 	var json = {};
 	
     jQuery.each($("#forma").serializeArray(), function() {

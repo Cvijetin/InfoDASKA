@@ -67,34 +67,31 @@ Flight::route('POST /rad/create', function(){
 	echo $o->sazetak;
 	
 	$veza = Flight::db();
-	$izraz = $veza->prepare("insert into autor (ime,prezime,email,fakultet,datumprijave) values (:ime,:prezime,:email,:fakultet,now())");
-	$izraz = $veza->prepare("insert into rad (naslov,sazetak,kljucnerijeci) values (:naslov,:sazetak,:kljucnerijeci)");
+	
+	$izraz = $veza->prepare("insert into rad (naslov,sazetak,kljucnerijeci) values 
+	('" . $o->naslov . "',
+	'" . $o->kljucnerijeci . "',
+	'" . $o->sazetak . "')
+	");
 	$izraz->execute((array)$o);
 
 	//nakon inserta rada staviti na rad autore
-
+	
 	echo "<hr />";
 	foreach($o->autori as $autor){
-		// $veza = Flight::db();
-		// $izraz = $veza->prepare("select * autor where ");
-		// $izraz->execute();
-		// $id = isset($_GET["id"]) ? $_GET["id"] : 0;
+		$veza = Flight::db();
+		$izraz1 = $veza->prepare("insert into autor (ime,prezime,email,fakultet) values
+		('" . $autor->ime . "',
+		'" . $autor->prezime . "',
+		'" . $autor->email . "',
+		'" . $autor->fakultet . "')
+		 ");
+		$izraz1->execute((array)$autor);
 		//prvo proveriti da li taj autor prema imenu i preyimenu postpoji u bayi
 		//ako postoji uyeti id_ako ne postoji unijeti novi i uyeti id
 		// echo $autor->ime . "<br />";
-	}
+	};
 	//echo "OK";
-});
-//Update
-//provjerit
-Flight::route('POST /rad/update', function(){
-	$o = json_decode(file_get_contents('php://input'));
-
-
-	$veza = Flight::db();
-	$izraz = $veza->prepare("update rad set naslov=:naslov,sazetak=:sazetak,kljucnerijeci=:kljucnerijeci,pocetakizlaganja=:pocetakizlaganja,krajizlaganja=:krajizlaganja,radionica=:radionica where sifra=:sifra;");
-	$izraz->execute((array)$o);
-	echo "OK";
 });
 //Delete
 Flight::route('POST /rad/delete', function(){

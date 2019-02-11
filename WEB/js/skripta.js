@@ -230,3 +230,26 @@ function trazi(){
 		postaviNaTablicu(jsonData);
 	});
 }
+
+
+$(document).ready(function() {
+
+	// Hide the div
+	$("#logo").hide();
+	$("#about").hide();
+	$("#info").hide();
+	$("#theme").hide();
+	$("#themes").hide();
+	$("#cfp").hide();
+	$("#footer").hide();
+
+	// Show the div in 5s themes
+	$("#logo").delay(1000).fadeIn('slow').delay(200);
+	$("#about").delay(2000).fadeIn(500);
+	$("#info").delay(3000).fadeIn(500);
+	$("#theme").delay(4000).fadeIn(500);
+	$("#themes").delay(5000).fadeIn(500);
+	$("#cfp").delay(6000).fadeIn(500);
+	$("#footer").delay(7000).fadeIn(500);
+
+});

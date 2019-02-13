@@ -79,7 +79,7 @@ Flight::route('POST /rad/create', function(){
 	
 	echo "<hr />";
 	foreach($o->autori as $autor){
-		$veza = Flight::db();
+		
 		$izraz1 = $veza->prepare("insert into autor (ime,prezime,email,fakultet) values
 		('" . $autor->ime . "',
 		'" . $autor->prezime . "',

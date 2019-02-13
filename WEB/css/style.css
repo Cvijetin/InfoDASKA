@@ -16,7 +16,7 @@ body {
 
   margin: 2% 10%;
 
-  font-family: 'Raleway';
+  font-family: 'Exo 2', sans-serif;
 
   background-color: white;
 
@@ -402,19 +402,19 @@ li{
 }
  
 p {
-  font-family: 'Raleway'; 
+  font-family: 'Exo 2', sans-serif;
   font-size: 18px; 
-  text-align: justify;
+  text-align: center;
 }
 
 h1 {
-font-family: 'Raleway';
+font-family: 'Exo 2', sans-serif;
 color: #b72126;
 text-align: center;
 }
 h4 {
 margin-top: 50px;
-font-family: 'Raleway';
+font-family: 'Exo 2', sans-serif;
 color: #b72126;
 text-align: center;
 font-size: 20px;
@@ -439,7 +439,7 @@ display: inline-block;
 
 .nav-link {
 color: #b72126;
-font-family: 'Raleway';
+font-family: 'Exo 2', sans-serif;
 font-size: 25px;
 font-weight: bold;
 }
@@ -462,7 +462,7 @@ margin-bottom: 100px;
 
 .about{
 text-align: center;
-font-family: 'Raleway';
+font-family: 'Exo 2', sans-serif;
 
 
 }

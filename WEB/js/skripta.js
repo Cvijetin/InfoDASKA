@@ -43,7 +43,7 @@ alertify.error("Niste unijeli fakultet");
  function prikaziAutore(){
 	 $("#autori").html("<h2>Prijavljeni autori:</h2>");
 	for(var i=0;i<autori.length;i++){
-	   $("#autori").append("<p>"
+	   $("#autori").append("<p class='lefttext'>"
 	   + autori[i].ime + " " + " | " 
 	   + autori[i].prezime + " " + " | " 
 	   + autori[i].email + " " + " | " 
@@ -83,7 +83,7 @@ alertify.error("Niste unijeli fakultet");
 ///////////////
 
 function ucitaj(){
-	$.getJSON(putanjaAPI + "/read", function( jsonData ) {
+	$.getJSON(putanjaAPI + "/rad/read", function( jsonData ) {
 		postaviNaTablicu(jsonData);
 	});
 }
@@ -109,6 +109,7 @@ $("#noviOperater").click(function(){
 ///////////////
 
 $("#spremi").click(function(){
+	
 	if($("#naslov").val()==="")
 	{
 	alertify.error("Niste unijeli naslov rada");
@@ -124,18 +125,27 @@ if($("#sazetak").val()==="")
 alertify.error("Niste unijeli sažetak");
    return false;
 }
+
+if($("#autori p").length == 0)
+{
+alertify.error("Niste unijeli autora");
+   return false;
+}
+
 	var json = {};
 	
     jQuery.each($("#forma").serializeArray(), function() {
         json[this.name] = this.value || '';
 	});
 	json["autori"]=autori;
-	console.log(json);
-	if (ajax(putanjaAPI + "/rad/create",json)) {
-		alertify.success("Uspješno prijavljen rad");
+	//console.log(json);
+	if (console.error !== null) {
+		ajax(putanjaAPI + "/rad/create",json)
+		alertify.success("Prijava uspješna");
+		setTimeout("location.href = 'index.html'",2000);
 	}
 	else{
-		alertify.error("Rad nije uspješno prijavljen");
+		alertify.error("Prijava neuspješna");
 	}
 		
 	return false;

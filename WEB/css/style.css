@@ -270,6 +270,7 @@ input{
 font-size: 18px;
 margin-left: -15px;
 padding-top: 10px;
+
 }
 
 .form-control-textarea{
@@ -424,6 +425,9 @@ font-weight: bold;
 
 .left{
 float: left;
+}
+.lefttext{
+  text-align: left;
 }
 .right{
 float: right;

@@ -64,34 +64,52 @@ Flight::route('/rad/read/@id', function($sifra){
 Flight::route('POST /rad/create', function(){
 	$o = json_decode(file_get_contents('php://input'));
 
-	echo $o->sazetak;
+	$autori=$o->autori;
+	unset($o->autori);
+
+	//echo $o->sazetak;
 	
 	$veza = Flight::db();
 	
 	$izraz = $veza->prepare("insert into rad (naslov,sazetak,kljucnerijeci) values 
-	('" . $o->naslov . "',
-	'" . $o->kljucnerijeci . "',
-	'" . $o->sazetak . "')
+	(:naslov,:sazetak,:kljucnerijeci)
 	");
 	$izraz->execute((array)$o);
+
+	$zadnjaSifraRada = $veza->lastInsertId();
 
 	//nakon inserta rada staviti na rad autore
 	
 	echo "<hr />";
-	foreach($o->autori as $autor){
-		
-		$izraz1 = $veza->prepare("insert into autor (ime,prezime,email,fakultet) values
-		('" . $autor->ime . "',
-		'" . $autor->prezime . "',
-		'" . $autor->email . "',
-		'" . $autor->fakultet . "')
-		 ");
-		$izraz1->execute((array)$autor);
+	foreach($autori as $autor){
+
 		//prvo proveriti da li taj autor prema imenu i preyimenu postpoji u bayi
 		//ako postoji uyeti id_ako ne postoji unijeti novi i uyeti id
 		// echo $autor->ime . "<br />";
+		$izraz = $veza->prepare("SELECT SIFRA FROM autor WHERE ime=:ime AND prezime=:prezime and email=:email");
+		$izraz->execute([
+			"ime"=>$autor->ime, 
+			"prezime"=>$autor->prezime, 
+			"email"=>$autor->email, 
+		]);
+
+		$zadnjaSifraAutora = $izraz->fetchColumn(0);
+		if($zadnjaSifraAutora==0){
+				$izraz = $veza->prepare("insert into autor (ime,prezime,email,fakultet) values
+				(:ime,:prezime,:email,:fakultet)");
+				$izraz->execute((array)$autor);
+				$zadnjaSifraAutora = $veza->lastInsertId();
+			}
+		
+			$izraz = $veza->prepare("insert into autorrad(autor,rad) values (:autor,:rad)");
+		$izraz->execute([
+			"autor"=>$zadnjaSifraAutora, 
+			"rad"=>$zadnjaSifraRada
+		]);
+		
+		
 	};
-	//echo "OK";
+	echo "OK";
 });
 //Delete
 Flight::route('POST /rad/delete', function(){

@@ -24,7 +24,6 @@ body {
 }
 
 header{
-
   display: block;
   margin-left: -15px;
 }
@@ -509,6 +508,7 @@ margin:auto;
 /* width */
 ::-webkit-scrollbar {
   visibility: hidden;
+  
 }
 
 /* Track */

@@ -531,3 +531,12 @@ margin:auto;
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000; 
 }
+
+/* ------------------------------------ grad ------------------------------- */
+.city-photos{
+  border-radius: 20px;
+}
+.photo{
+  padding-top: 10px;
+  padding-bottom: 20px;
+}

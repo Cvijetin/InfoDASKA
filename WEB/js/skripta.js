@@ -274,7 +274,7 @@ $(document).ready(function() {
 	$("#logo").delay(500).fadeIn('slow').delay(200);
 	$("#about").delay(1000).fadeIn(500);
 	$("#info").delay(1200).fadeIn(500);
-	$("#theme").delay(1500).fadeIn(500);
+	$("#theme").delay(1400).fadeIn(500);
 	$("#themes").delay(2000).fadeIn(500);
 	$("#cfp").delay(2500).fadeIn(500);
 	$("#footer").delay(3000).fadeIn(500);

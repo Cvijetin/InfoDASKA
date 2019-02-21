@@ -128,7 +128,7 @@ alertify.error("Niste unijeli sažetak");
 
 if($("#autori p").length == 0)
 {
-alertify.error("Niste unijeli autora");
+alertify.error("Niste dodali autora");
    return false;
 }
 

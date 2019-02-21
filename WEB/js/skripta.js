@@ -265,7 +265,10 @@ $(document).ready(function() {
 	$("#theme").hide();
 	$("#themes").hide();
 	$("#cfp").hide();
+	$("#city-photo").hide();
+	$("#text-osijek").hide();
 	$("#footer").hide();
+	$("#city").hide();
 
 	// Show the div in 5s themes
 	$("#logo").delay(500).fadeIn('slow').delay(200);
@@ -275,5 +278,7 @@ $(document).ready(function() {
 	$("#themes").delay(2000).fadeIn(500);
 	$("#cfp").delay(2500).fadeIn(500);
 	$("#footer").delay(3000).fadeIn(500);
-
+	$("#city").delay(700).fadeIn(500);
+	$("#city-photo").delay(1300).fadeIn(500);
+	$("#text-osijek").delay(1800).fadeIn(500);
 });

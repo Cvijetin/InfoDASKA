@@ -18,6 +18,7 @@ sazetak text not null,
 kljucnerijeci varchar(250) not null,
 pocetakizlaganja datetime,
 krajizlaganja datetime,
+datumprijaverada TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 radionica boolean default false
 )engine=innodb CHARACTER SET utf8 COLLATE utf8_general_ci;
 

@@ -42,8 +42,6 @@ h1 {
 
   color: #b72126;
 
-  margin-left: 20px;
-
   font-weight: bold;
 
   font-size: 35px;
@@ -326,11 +324,15 @@ label{
 
 
 .back{
+display: inline-block;
+padding-right: 30px;
+font-size: 30px;
 
-  display: inline-block;
+}
 
-  font-size: 30px;
-
+.fas:hover{
+  color: grey;
+  cursor: pointer;
 }
 
 i{
@@ -401,6 +403,10 @@ h5{
 li{
   font-size: 18px;
 }
+
+.logos{
+  padding-bottom: 30px;
+}
  
 p {
   font-family: 'Exo 2', sans-serif;
@@ -414,7 +420,7 @@ color: #b72126;
 text-align: center;
 }
 h4 {
-margin-top: 50px;
+  padding-bottom: 20px;
 font-family: 'Exo 2', sans-serif;
 color: #b72126;
 text-align: center;
@@ -484,20 +490,15 @@ height: 100px;
 margin-bottom: 40px;
 }
 
-.icon3{
-margin-top: 20px;
-
-margin-left:10px;
-} 
 
 .double {
 
-margin-top: 50px;
+margin-top: 35px;
 
 
 }
 .pading {
-padding-top: 40px; 
+padding-top: 20px; 
 
 
 }
@@ -534,6 +535,18 @@ margin:auto;
   background: #b30000; 
 }
 
+.icon3{
+  width: 150px;
+}
+
+
+.icon2{
+  width: 120px;
+}
+
+.btn-right{
+  float: right;
+}
 /* ------------------------------------ grad ------------------------------- */
 .city-photos{
   border-radius: 20px;
@@ -542,3 +555,60 @@ margin:auto;
   padding-top: 10px;
   padding-bottom: 20px;
 }
+/* -------------------- mobile prijava ---------------------------------------*/
+@media screen and (max-width: 600px) {
+  .registration {
+   
+  }
+  img{
+    width: 100%;
+  }
+  .icon3{
+    width: 100px;
+  }
+
+.icon2{
+  width: 80px;
+}
+.form-input{
+width: 50%;
+}
+
+.btn-right{
+float: none;
+}
+.nav-link{
+  font-size: 11px;
+}
+.daska{
+ display: none;
+}
+.header-wrapper{
+  text-align: center;
+  height: 50px;
+}
+header{
+  margin-left: 0 !important;
+}
+.register{
+  margin-left: -15px !important;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+h1{
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+li, p{
+  font-size: 14px;
+}
+.logo_center{
+  margin-bottom: 50px;
+}
+.back{
+  font-size: 20px;
+  padding-right: 20px;
+}
+}
+
+/* ---------------------navbar------------------------------------------------------ */

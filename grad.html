@@ -11,12 +11,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="infoDaska2019" />
     <meta property="og:image" content="http://it.ffos.hr/P320182019/jzilic/daskalogo.png" />
-
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css"
+        integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Raleway');
     </style>
@@ -28,20 +30,20 @@
 </head>
 
 <body>
-    <header class="header-wrapper">
-        <div class="header-item left">
-            <a class="nav-link" href="index.html">InfoDASKA 2019</a>
+    <header class="register">
+
+        <div class="back">
+
+            <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+
         </div>
-        <div class="header-item right">
-            <a class="nav-link" href="prijava.html">Registracija</a>
+
+        <div class="title" id="modal">
+
+            <h1>O gradu</h1>
+
         </div>
-        <div class="header-item right">
-            <a class="nav-link" href="grad.html">O gradu</a>
-        </div>
-        <!--
-      <div class="header-item right">
-        <a class="nav-link" href="#">Program</a>
-      </div> -->
+
     </header>
     <h1 class="center" id="city">Osijek</h1>
     <div class="row">
@@ -50,32 +52,34 @@
         </div>
         <div class="col-lg-7 col-sm-12" id="text-osijek">
             Osijek je četvrti po veličini grad u Hrvatskoj s ukupnom populacijom od oko 100 tisuća
-                stanovnika. Grad se nalazi na istoku zemlje na desnoj obali rijeke Drave. Njegova povijest
-                seže još od antičkog doba kada je utemeljena Mursa, jedna od rimskih kolonija. Zbog svoje
-                strateške pozicije, odnosno blizini susjednih zemalja, razne su kulture ostavile svoj trag što se
-                može primijetiti kako po arhitekturi tako i po životnim navikama, tradicijom i običajima koji
-                se njeguju. Osim blizine susjednih zemalja, Osijek se nalazi u neposrednoj blizini
-                nezaobilaznog Parka prirode Kopački rit koji je zbog svoje šarolike flore i faune proglašen
-                europskom Amazonom. Grad se diči svojim intelektualnim bogatstvom kao dom Sveučilišta
-                Josipa Jurja Strossmayera, te dom dvaju nobelovaca – Lavoslava Ružičke i Vladimira Preloga.
-                Ova dva intelektualca nisu jedine poznate osobe rođene u Osijeku. Branko Lustig,
-                hollywoodski producent i dobitnik dva Oskara, i Julije Knifer, apstraktni slikar, također su
-                rođeni u Osijeku. Grad sve više privlači mlade zahvaljujući Sveučilištu i rastućoj softverskoj
-                sceni, pa ga neki od milja zovu i hrvatska Silicijska dolina. Osijek se smatra i gradom
-                biciklizma te je svake godine domaćin Pannonian Challenge-a, festivala ekstremnog sporta i
-                glazbe. Više informacija o našem gradu možete pronaći na mrežnim stranicama Turističke
-                zajednice Grada Osijeka.
+            stanovnika. Grad se nalazi na istoku zemlje na desnoj obali rijeke Drave. Njegova povijest
+            seže još od antičkog doba kada je utemeljena Mursa, jedna od rimskih kolonija. Zbog svoje
+            strateške pozicije, odnosno blizini susjednih zemalja, razne su kulture ostavile svoj trag što se
+            može primijetiti kako po arhitekturi tako i po životnim navikama, tradicijom i običajima koji
+            se njeguju. Osim blizine susjednih zemalja, Osijek se nalazi u neposrednoj blizini
+            nezaobilaznog Parka prirode Kopački rit koji je zbog svoje šarolike flore i faune proglašen
+            europskom Amazonom. Grad se diči svojim intelektualnim bogatstvom kao dom Sveučilišta
+            Josipa Jurja Strossmayera, te dom dvaju nobelovaca – Lavoslava Ružičke i Vladimira Preloga.
+            Ova dva intelektualca nisu jedine poznate osobe rođene u Osijeku. Branko Lustig,
+            hollywoodski producent i dobitnik dva Oskara, i Julije Knifer, apstraktni slikar, također su
+            rođeni u Osijeku. Grad sve više privlači mlade zahvaljujući Sveučilištu i rastućoj softverskoj
+            sceni, pa ga neki od milja zovu i hrvatska Silicijska dolina. Osijek se smatra i gradom
+            biciklizma te je svake godine domaćin Pannonian Challenge-a, festivala ekstremnog sporta i
+            glazbe. Više informacija o našem gradu možete pronaći na mrežnim stranicama Turističke
+            zajednice Grada Osijeka.
         </div>
     </div>
     <footer class="footer_text pading" id="footer">
         <div class="pad-bottom">
-            <a href="https://www.facebook.com/klublibros/"> <img class="icon3" width="100px" height="100px"
-                    src="img/libros_logo.jpg"> </a>
-            <a href="http://www.ffos.unios.hr/"> <img class="icon3" width="100px" height="100px" src="img/ffos.png">
-            </a>
+            <div class="logos">
+                <a href="https://www.facebook.com/klublibros/"> <img class="icon3" src="img/libros_logo.jpg"> </a>
+                <a href="http://www.ffos.unios.hr/"> <img class="icon2" src="img/ffos.png"> </a>
+            </div>
+            <p>Za sva pitanja kontaktirajte:</p>
             <h4 class="card-title">infodaska2019@gmail.com</h4>
         </div>
     </footer>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>

@@ -282,3 +282,5 @@ $(document).ready(function() {
 	$("#city-photo").delay(1300).fadeIn(500);
 	$("#text-osijek").delay(1800).fadeIn(500);
 });
+
+

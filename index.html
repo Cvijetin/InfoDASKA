@@ -12,6 +12,8 @@
   <meta property="og:title" content="infoDaska2019" />
   <meta property="og:image" content="http://it.ffos.hr/P320182019/jzilic/daskalogo.png" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
     integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
@@ -28,7 +30,16 @@
 </head>
 
 <body>
-  <header class="header-wrapper">
+
+    <div class="topnav" id="myTopnav">
+      <span>InfoDaska2019</span>
+        <a href="grad.html" class="city">O gradu</a>
+        <a href="prijava.html" class="register" >Registracija</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+  <!-- <header class="header-wrapper">
     <div class="header-item left">
       <a class="nav-link " href="#">InfoDASKA 2019</a>
     </div>
@@ -38,10 +49,10 @@
     <div class="header-item right">
         <a class="nav-link" href="prijava.html">Registracija</a>
       </div>
-      <!-- <div class="header-item btn-right">
+       <div class="header-item btn-right">
         <a class="nav-link" href="#">Program</a>
-      </div> -->
-  </header>
+      </div> 
+  </header> -->
   <div class="logo_center" id="logo">
     <img src="img/daskalogo.png">
   </div>
@@ -130,6 +141,17 @@
       //server
       //var putanjaAPI="/P11617/tjakopec/P3/Programiranje3API";
   </script>
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
   <script src="js/skripta.js"></script>
 </body>
 

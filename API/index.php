@@ -111,22 +111,7 @@ Flight::route('POST /rad/create', function(){
 	};
 	echo "OK";
 });
-//Delete
-Flight::route('POST /rad/delete', function(){
-	$o = json_decode(file_get_contents('php://input'));
-	$veza = Flight::db();
-	$izraz = $veza->prepare("delete from rad where sifra=:sifra;");
-	$izraz->execute((array)$o);
-	echo "OK";
-});
-//Search
-//provjerit
-Flight::route('/rad/search/@uvjet', function($uvjet){
-	$veza = Flight::db();
-	$izraz = $veza->prepare("select sifra,naslov,sazetak,kljucnerijeci,pocetakizlaganja,krajizlaganja,radionica from rad where concat(naslov,' ',kljucnerijeci) like :uvjet");
-	$izraz->execute(array("uvjet" => "%" . $uvjet . "%"));
-	echo json_encode($izraz->fetchAll(PDO::FETCH_OBJ), JSON_UNESCAPED_UNICODE);
-});
+
 //utility
 Flight::map('notFound', function(){
    $poruka=new stdClass();
@@ -135,7 +120,7 @@ Flight::map('notFound', function(){
    echo json_encode($poruka, JSON_UNESCAPED_UNICODE);
 });
 //lokalno
-Flight::register('db', 'PDO', array('mysql:host=localhost;dbname=infodaska2019;charset=UTF8','infodaska7','UHduwhd.ojwf'));
+Flight::register('db', 'PDO', array('mysql:host=localhost;dbname=daska_api;charset=UTF8','root',''));
 //server
 //Flight::register('db', 'PDO', array('mysql:host=localhost;dbname=tjakopec_p3;charset=UTF8','tjakopec','123456'));
 Flight::start();

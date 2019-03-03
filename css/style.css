@@ -555,16 +555,62 @@ margin:auto;
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
+.w-100{
+  height: auto !important;
+  width: auto !important;
+  max-width: 700px;
+  max-height: 400px;
+  min-width: 700px;
+  min-height: 400px;
+}
+
+.city-text{
+  padding-top: 40px;
+  letter-spacing: 1px;
+}
+
+#text-osijek{
+  padding-bottom: 50px;
+  padding-top: 20px
+}
+
+
+strong{
+  color: #b72126;
+}
 /* -------------------- mobile prijava ---------------------------------------*/
 @media screen and (max-width: 600px) {
   .registration {
    
   }
+  .reverse {
+    flex-direction: column-reverse;
+  }
   img{
     width: 100%;
+    
+  }
+  .text{
+    font-size: 15px;
+  }
+
+  .city-text{
+    padding-top: 20px;
   }
   .icon3{
     width: 100px;
+  }
+  .w-100{
+    width: 100% !important;
+    min-width: auto;
+    min-height: auto;
+    max-height: 180px;
+  }
+
+  #text-osijek{
+    padding-bottom: 0px;
+    padding-top: 10px;
   }
 
 .icon2{

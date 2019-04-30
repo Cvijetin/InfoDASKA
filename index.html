@@ -11,6 +11,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="infoDaska2019" />
   <meta property="og:image" content="http://it.ffos.hr/P320182019/jzilic/daskalogo.png" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
     integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -28,18 +30,30 @@
 </head>
 
 <body>
-  <header class="header-wrapper">
+
+    <div class="topnav" id="myTopnav">
+      <span>InfoDaska2019</span>
+        <a href="grad.html" class="city">O gradu</a>
+        <a href="prijava.html" class="register" >Registracija</a>
+          <a href="doc/prijevoz.pdf" class="register">Prijevoz sudionika</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+  <!-- <header class="header-wrapper">
     <div class="header-item left">
-      <a class="nav-link" href="#">InfoDASKA 2019</a>
+      <a class="nav-link " href="#">InfoDASKA 2019</a>
     </div>
+    <div class="header-item right">
+        <a class="nav-link" href="grad.html">O gradu</a>
+      </div> 
     <div class="header-item right">
         <a class="nav-link" href="prijava.html">Registracija</a>
       </div>
-      <!--
-      <div class="header-item right">
+       <div class="header-item btn-right">
         <a class="nav-link" href="#">Program</a>
-      </div> -->
-  </header>
+      </div> 
+  </header> -->
   <div class="logo_center" id="logo">
     <img src="img/daskalogo.png">
   </div>
@@ -54,21 +68,21 @@
 
     <div class="col-lg-4" id="info">
       <h1>InfoDASKA 2019</h1>
-      <p><strong>InfoDASKA 2019</strong> održat će se na Filozofskom fakultetu u Osijeku. Ogranizatori konferencije su
-        studenti s Odsjeka za infromacijske znanosti te članovi kluba studenata infromacijskih znanosti Libros.
-        Konferencija će se održati od 10. do 11. svibnja 2019. godine.</p>
+      <p><strong>InfoDASKA 2019</strong> održat će se na Filozofskom fakultetu u Osijeku. Organizatori konferencije su
+        studenti s Odsjeka za informacijske znanosti te članovi kluba studenata informacijskih znanosti Libros.
+        Konferencija će se održati 10. i 11. svibnja 2019. godine.</p>
     </div>
     <div class="col-lg-4" id="theme">
       <h1>Tema konferencije</h1>
-      <p>Tema ovogodišnje InfoDASKA-e je <strong>Informacijska tehnologija kao pokretač promjena</strong>.
-        Što uključuje dvije podteme: Uloga informacijskih ustanova u procesu promjena i odnos informacijskih stručnjaka
+      <p>Tema ovogodišnje InfoDASKA-e je <strong>Informacijska tehnologija kao pokretač promjena</strong>,
+        što uključuje dvije podteme: Uloga informacijskih ustanova u procesu promjena i odnos informacijskih stručnjaka
         prema tehnologijama.
       </p>
     </div>
   </div>
   <div class="double" id="themes">
     <div class="row pading">
-      <div class="col-lg-6 ">
+      <div class="col-lg-6 role">
         <h1><strong>Uloga informacijskih ustanova u procesu promjena</strong></h1>
         <ul>
           <li>Informacijske ustanove kao posrednik između tehnologije i korisnika </li>
@@ -104,8 +118,11 @@
 
   <footer class="footer_text pading" id="footer">
     <div class="pad-bottom">
-      <a href="https://www.facebook.com/klublibros/"> <img class="icon3" width="100px" height="100px" src="img/libros_logo.jpg"> </a>
-      <a href="http://www.ffos.unios.hr/"> <img class="icon3" width="100px" height="100px" src="img/ffos.png"> </a>
+      <div class="logos">
+      <a href="https://www.facebook.com/klublibros/"> <img class="icon3" src="img/libros_logo.jpg"> </a>
+      <a href="http://www.ffos.unios.hr/"> <img class="icon2" src="img/ffos.png"> </a>
+    </div>
+      <p>Za sva pitanja kontaktirajte:</p>
       <h4 class="card-title">infodaska2019@gmail.com</h4>
     </div>
   </footer>
@@ -121,10 +138,21 @@
 
   <script>
     //lokalno
-    var putanjaAPI = "../API";
+    var putanjaAPI = "/API";
       //server
       //var putanjaAPI="/P11617/tjakopec/P3/Programiranje3API";
   </script>
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
   <script src="js/skripta.js"></script>
 </body>
 

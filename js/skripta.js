@@ -128,7 +128,7 @@ alertify.error("Niste unijeli sažetak");
 
 if($("#autori p").length == 0)
 {
-alertify.error("Niste unijeli autora");
+alertify.error("Niste dodali autora");
    return false;
 }
 
@@ -265,15 +265,18 @@ $(document).ready(function() {
 	$("#theme").hide();
 	$("#themes").hide();
 	$("#cfp").hide();
+
 	$("#footer").hide();
 
 	// Show the div in 5s themes
-	$("#logo").delay(1000).fadeIn('slow').delay(200);
-	$("#about").delay(2000).fadeIn(500);
-	$("#info").delay(3000).fadeIn(500);
-	$("#theme").delay(4000).fadeIn(500);
-	$("#themes").delay(5000).fadeIn(500);
-	$("#cfp").delay(6000).fadeIn(500);
-	$("#footer").delay(7000).fadeIn(500);
-
+	$("#logo").delay(500).fadeIn('slow').delay(200);
+	$("#about").delay(1000).fadeIn(500);
+	$("#info").delay(1200).fadeIn(500);
+	$("#theme").delay(1400).fadeIn(500);
+	$("#themes").delay(2000).fadeIn(500);
+	$("#cfp").delay(2500).fadeIn(500);
+	$("#footer").delay(3000).fadeIn(500);
+	
 });
+
+

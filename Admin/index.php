@@ -38,7 +38,15 @@ $rad = $query->fetchAll();
       <th scope="col">Datum (autor)</th>
 
       <!-- Rad -->
+<<<<<<< HEAD
      
+=======
+      <th scope="col">Sifra</th>
+      <th scope="col">Naslov</th>
+      <th scope="col">Sažetak</th>
+      <th scope="col">Ključne riječi</th>
+      <th scope="col">Datum (rad)</th>
+>>>>>>> fbe0788da58cdddd606f6808f983e470fa9ae4a4
 
     </tr>
   </thead>
@@ -53,7 +61,21 @@ foreach ($autor as $autori) {
          "<td>" . $autori["prezime"] . "</td>" .
          "<td>" . $autori["email"] . "</td>" .
          "<td>" . $autori["fakultet"] . "</td>" .
+<<<<<<< HEAD
          "<td>" . $autori["datumprijave"] . "</td></tr>";
+=======
+         "<td>" . $autori["datumprijave"] . "</td>";
+}
+
+foreach ($rad as $radovi) {
+
+    echo "<td>" . $radovi["sifra"] . "</td>" .
+         "<td>" . $radovi["naslov"] . "</td>" .
+         "<td>" . $radovi["sazetak"] . "</td>" .
+         "<td>" . $radovi["kljucnerijeci"] . "</td>" .
+         "<td>" . $radovi["datumprijaverada"] . "</td></tr>";
+         
+>>>>>>> fbe0788da58cdddd606f6808f983e470fa9ae4a4
 }
 
 ?>
@@ -62,6 +84,7 @@ foreach ($autor as $autori) {
 </table>
 
 
+<<<<<<< HEAD
 <table class="table table-dark">
   <thead>
     <tr>
@@ -87,6 +110,8 @@ echo "<tr><td>" . $radovi["sifra"] . "</td>" .
 
 ?>
 
+=======
+>>>>>>> fbe0788da58cdddd606f6808f983e470fa9ae4a4
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

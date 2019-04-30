@@ -120,7 +120,11 @@ Flight::map('notFound', function(){
    echo json_encode($poruka, JSON_UNESCAPED_UNICODE);
 });
 //lokalno
+<<<<<<< HEAD
 Flight::register('db', 'PDO', array('mysql:host=localhost;dbname=infodaska2019;charset=UTF8','infodaska7','UHduwhd.ojwf'));
+=======
+Flight::register('db', 'PDO', array('mysql:host=localhost;dbname=infodaska2019;charset=UTF8','',''));
+>>>>>>> fbe0788da58cdddd606f6808f983e470fa9ae4a4
 //server
 //Flight::register('db', 'PDO', array('mysql:host=localhost;dbname=tjakopec_p3;charset=UTF8','tjakopec','123456'));
 Flight::start();
